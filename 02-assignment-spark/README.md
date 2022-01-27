@@ -2,11 +2,6 @@
 
 ## Overview
 
-### Cloud Environment - Azure Databricks
-
-#### Access
-
-
 ### Dataset inputs
 
 - **New York City Taxi Trips dataset** - list of recorded taxi trips, each with several characteristics, namely: distance, number of passengers, origin zone, destination zone and trip cost (total amount charged to customer).
