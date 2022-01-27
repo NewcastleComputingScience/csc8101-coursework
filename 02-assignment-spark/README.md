@@ -85,19 +85,19 @@ Despite having removed spurious "zero passengers" trips in task 1.1, columns `to
 To identify and remove outliers, you will use the modified [z-score](https://en.wikipedia.org/wiki/Standard_score) method.
 The modified z-score uses the median and [Median Absolute Deviation](https://en.wikipedia.org/wiki/Median_absolute_deviation) (MAD), instead of the mean and standard deviation, to determine how far an observation (indexed by i) is from the mean:
 
-$$z_i = \frac{x_i - \mathit{median}(\mathbf{x})}{\mathbf{MAD}},$$
+<img src="https://render.githubusercontent.com/render/math?math=z_i = \frac{x_i - \mathit{median}(\mathbf{x})}{\mathbf{MAD}}">
 
 where x represents the input vector, xi is an element of x and zi is its corresponding z-score. In turn, the MAD formula is:
 
-$$\mathbf{MAD} = 1.438 * \mathit{median}(\big\lvert x_i - \mathit{median}(\mathbf{x})\big\rvert).$$
+<img src="https://render.githubusercontent.com/render/math?math=\mathbf{MAD} = 1.438 * \mathit{median}(\big\lvert x_i - \mathit{median}(\mathbf{x})\big\rvert)">
 
 Observations with **high** (absolute) z-score are considered outlier observations. A score is considered **high** if it passes a threshold T, calculated using the mean and standard deviation of the calculated z-scores:
 
-$$T_{\text{outlier}} = \mathit{mean}(\mathbf{z}) + 2 \cdot \mathit{std}(\mathbf{z}).$$
+<img src="https://render.githubusercontent.com/render/math?math=T_{\text{outlier}} = \mathit{mean}(\mathbf{z}) + 2 \cdot \mathit{std}(\mathbf{z})">
 
 Formally, a trip record is thus labelled as **outlier** if its __absolute z-score__ is larger than T:
 
-$$\big\lvert z_i \big\rvert > T_{\text{outlier}}.$$
+<img src="https://render.githubusercontent.com/render/math?math=\big\lvert z_i \big\rvert > T_{\text{outlier}}">
 
 This process is repeated twice, once for each of the columns `total_amount` and `trip_distance` (in any order).
 
