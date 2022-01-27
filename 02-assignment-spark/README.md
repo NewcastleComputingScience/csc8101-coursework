@@ -10,28 +10,28 @@
 ## Tasks
 
 1. Data cleaning
-  1. Remove "0 distance" and 'no passengers' records.
-  2. Remove outlier records. 
+    1. Remove "0 distance" and 'no passengers' records.
+    2. Remove outlier records.
 2. Add new columns
-  1. Join with zones dataset
-  2. Compute the unit profitability of each trip
+    1. Join with zones dataset
+    2. Compute the unit profitability of each trip
 3. Zone summarisation and ranking
-  1. Summarise trip data per zone
-  2. Obtain the top 10 ranks according to:
-    1. The total trip volume
-    2. Their average profitabilitiy
-    3. The total passenger volume
-4. Record the total and task-specific execution times for each dataset size.
+    1. Summarise trip data per zone
+    2. Obtain the top 10 ranks according to:
+        - The total trip volume
+        - Their average profitabilitiy
+        - The total passenger volume
+4. Record the total pipeline execution time for each dataset size.
 
 ## How to
 
-##### Code structure and implementation
+#### Code structure and implementation
 
 - You must implement your solution to each task in the provided function code skeleton.
 - The task-specific functions are combined together to form the full pipeline code, executed last (do not modify this code).
 - Before implementing the specified function skeleton, you should develop and test your solution on separate code cells (create and destroy cells as needed).
 
-##### Development
+#### Development
 
 - Develop an initial working solution for the 'S' dataset and only then optimise it for larger dataset sizes.
 - To perform vectorised operations on a DataFrame:
@@ -41,7 +41,7 @@
   - https://spark.apache.org/docs/3.2.0/api/python/reference/pyspark.sql.html
 - Always backup your solution in a separate file or your personal computer.
  
-##### Execution time measurement
+#### Execution time measurement
 
 - Execution time is calculated and returned by the Spark Engine and shown in the output region of the cell.
 - To measure the execution time of a task you must perform a `collect` or similar operation (e.g. `take`) on the returned DataFrame.
