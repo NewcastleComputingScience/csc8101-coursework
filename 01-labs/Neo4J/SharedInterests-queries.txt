@@ -1,0 +1,69 @@
+MATCH (P1:Person) -[:INTERESTED_IN]->(i) <-[:INTERESTED_IN]-(P2:Person)
+RETURN P1.name, P2. name, i.name
+
+MATCH (p1:Person) -[:WORKED_ON]->(prj:Project) <-[:WORKED_ON]-(p2:Person)
+RETURN p1.name, p2. name, prj.name
+
+MATCH (P1:Person) -[:INTERESTED_IN]->(i) <-[:INTERESTED_IN]-(P2:Person), 
+             (p1) -[:WORKED_ON]->(prj:Project) <-[:WORKED_ON]-(p2)
+RETURN p1.name, p2. name, i.name, prj.name
+
+MATCH (P1:Person) -[:INTERESTED_IN]->(i:Interest) 
+               <-[:INTERESTED_IN]-(P2:Person)
+RETURN P1, P2, count(*) as InterestsCount
+order by InterestsCount desc
+
+MATCH (P1:Person) -[:INTERESTED_IN]->(i:Interest) 
+              <-[:INTERESTED_IN]-(P2:Person)
+WHERE P1.name < P2.name
+RETURN P1.name, P2.name, count(*) as InterestsCount
+order by InterestsCount desc
+
+
+MATCH (P1:Person) -[:INTERESTED_IN]->(i:Interest) 
+              <-[:INTERESTED_IN]-(P2:Person)
+WITH  P1, P2, count(*) as InterestsCount
+order by InterestsCount desc
+where InterestsCount > 1 and P1.name < P2.name
+return P1.name, P2.name, InterestsCount
+
+MATCH (P1:Person) -[:INTERESTED_IN]->(i) <-[:INTERESTED_IN]-(P2:Person)
+ WHERE  NOT (P1) -[:WORKS_FOR]->()<-[:WORKS_FOR]-(P2)
+        AND P1.name < P2.name
+RETURN P1.name, P2. name, i.name
+
+MATCH (P1:Person), (P2:Person)
+WHERE P1.name < P2.name
+OPTIONAL MATCH (P1) -[:WORKS_FOR]->(C)<-[:WORKS_FOR]-(P2)
+RETURN P1.name, P2. name, C.name
+ORDER BY C.name
+
+MATCH (c:Company) <-[:WORKS_FOR] - (p:Person)
+WITH c, count(*) as countEmp
+WHERE countEmp >3 
+RETURN c.name, countEmp
+
+MATCH (c:Company) <-[:WORKS_FOR] - (p:Person) - [:INTERESTED_IN]-> (i)
+RETURN c.name, i.name
+
+MATCH (c:Company) <-[:WORKS_FOR] - (p:Person) - [:INTERESTED_IN]-> (i)
+RETURN c.name, collect(i.name)
+
+MATCH (c:Company) <-[:WORKS_FOR] - (p:Person) - [:INTERESTED_IN]-> (i)
+RETURN c.name, collect(distinct i.name)
+
+*********       
+LDBC class queries:
+*********
+
+match (p1:Person {id:"933"}) -[:KNOWS*..4]->(p2:Person)
+return p1.id, count(*)
+
+
+match path= (p1:Person {id:"933"}) -[:KNOWS*..4]->(p2:Person)
+return length(path) as length, count(*) as c
+
+match path= (p1:Person {id:"933"}) -[:KNOWS*..3]->(p2:Person)
+with length(path) as l, count(*) as c, path 
+return l, [ n in nodes(path) | n.id] order by l limit 10
+
