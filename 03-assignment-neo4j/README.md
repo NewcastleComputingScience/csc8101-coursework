@@ -121,7 +121,7 @@ As specificed above, run the algorithm in 2 modes: `stats` and `stream`:
 - Report the number of communities using the `stats` mode,
 - Export the results of running the algorithm in `stream` as a CSV file with two columns `zone_id`
   and `community_id` and
-- Visualise the results in the ap[app](http://csc8101-neo4j-shiny.uksouth.cloudapp.azure.com/) by
+- Visualise the results in the [app](http://csc8101-neo4j-shiny.uksouth.cloudapp.azure.com/) by
   uploading the produced csv file (right-click to download image).
 
 **Tip:** See the
