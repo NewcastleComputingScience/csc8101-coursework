@@ -178,14 +178,14 @@ visualisation image.
 
 Note: isolated nodes found in Task 0 have been removed for this task.
 
-## Task 3 - Zone recommendation based on 1 and 2
+## Task 3 - Zone recommendation
 
 Find the top 3 highest centrality zones per each community:
 
 1. Including zones in the 'Manhattan' borough. 
 2. Excluding zones in the 'Manhattan' borough.
 
-Do this using the already available relationship properties `community` (representing the community
+Do this using the already available `zone` node labels `community` (representing the community
 id obtained in 1) and `centrality` (representing the centrality score obtained in 2).
 
 For each case, return two columns: `zone_id` and `community_id` and export the query results to a
