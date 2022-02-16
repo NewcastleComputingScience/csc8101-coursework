@@ -185,7 +185,7 @@ Find the top 3 highest centrality zones per each community:
 1. Including zones in the 'Manhattan' borough. 
 2. Excluding zones in the 'Manhattan' borough.
 
-Do this using the already available `zone` node labels `community` (representing the community
+Do this using the available zone labels `community` (representing the community
 id obtained in 1) and `centrality` (representing the centrality score obtained in 2).
 
 For each case, return two columns: `zone_id` and `community_id` and export the query results to a
@@ -193,7 +193,7 @@ csv file. Then, using the visualisation
 [app](http://csc8101-neo4j-shiny.uksouth.cloudapp.azure.com/), upload these (one at a time) to the
 'Task-3' file input and produce a separate and produce two separate images.
 
-**IMPORTANT:** Do not delete any nodes/relationships. Execute `MATCH` only queries.
+**IMPORTANT:** Do not delete any nodes/relationships. Execute `MATCH` queries only.
 
 **Deliverables:** cypher queries and resulting visualisation images.
 
