@@ -179,7 +179,7 @@ csv file. Then, using the visualisation
 
 You will submit the following deliverables to [NESS](https://ness.ncl.ac.uk):
 
-1. Cypher queries for all tasks (0 to 3) in a single ".cypher" file, with comments clearly indicating where one task begins and another ends.
+1. Cypher queries for all tasks (0 to 3) in a single ".cypher" file, with comments clearly indicating where each task begins.
     - [ ] Task 0:
         - [ ] query 1
         - [ ] query 2
