@@ -1,5 +1,12 @@
 # CSC8101 - Neo4j Assignment
 
+Contents:
+
+- [Scenario](#scenario)
+- [Task details](#task-details)
+- [Deliverables](#deliverables)
+- [Connection details](#connection-details)
+
 ## Scenario
 
 A taxi company operating in New York City (NYC) is rethinking its fleet allocation strategy. Their
@@ -74,7 +81,7 @@ typical workflow described [here](https://neo4j.com/docs/graph-data-science/curr
   mode](https://neo4j.com/docs/graph-data-science/current/common-usage/running-algos/#running-algos-stream)
   to run the algorithm but not store the results in the original graph.
 
-**IMPORTANT:** Since everyone is reading from the same database, you will **NOT** execute write
+> **Important:** Since everyone is reading from the same database, you will NOT execute write
 queries to the database (create/update/delete) **NOR** run the GDS library algorithms in [merge
 mode](https://neo4j.com/docs/graph-data-science/current/common-usage/running-algos/#running-algos-write)
 (as this would cause the results to be written to the original graph, shared by everyone).
@@ -82,10 +89,9 @@ mode](https://neo4j.com/docs/graph-data-science/current/common-usage/running-alg
 In task 3 you will develop a cypher query that combines the outcomes of tasks 1 and 2.
 
 Due to database writing restrictions, the coursework is split across three neo4j databases - one for
-Task 0, another for tasks 1 and 2 and a third for task 3. Connection details are given at the end of
-each task's description.
+Task 0, another for tasks 1 and 2 and a third for task 3. Go [here](#connection-details) for connection details.
 
-## Task 0 - Find isolated nodes
+### Task 0 - Find isolated nodes
 
 Find all:
 
@@ -94,18 +100,9 @@ Find all:
 2. Find all isolated nodes, i.e. all nodes that have no relationship instaces of type `:CONNECTS`
    to other nodes except possibly to themselves.
 
-**IMPORTANT:** Do not delete the nodes/relationships found this way. Execute `MATCH` only queries.
+> **Important:** Do not delete the nodes/relationships found this way. Execute `MATCH` only queries.
 
-**Deliverables:** cypher queries for 1 and 2.
-
-**Neo4j database connection details:**
-
-- url: http://csc8101-neo4j-task0.uksouth.cloudapp.azure.com:7474/browser/
-- Neo4j Connect URL: bolt://20.90.189.157:7687
-- Neo4j username: neo4j
-- Neo4j password: neo4j
-
-## Task 1 - Community detection
+### Task 1 - Community detection
 
 Run the Louvain algorithm for community detection, available in the [GDS
 library](https://neo4j.com/docs/graph-data-science/current/algorithms/louvain/), with the following
@@ -124,24 +121,14 @@ As specificed above, run the algorithm in 2 modes: `stats` and `stream`:
 - Visualise the results in the [app](http://csc8101-neo4j-shiny.uksouth.cloudapp.azure.com/) by
   uploading the produced csv file (right-click to download image).
 
-**Tip:** See the
-[examples](https://neo4j.com/docs/graph-data-science/current/algorithms/louvain/#algorithms-louvain-examples).
+> **Tip:** See the
+[examples](https://neo4j.com/docs/graph-data-science/1.8/algorithms/page-rank/#algorithms-page-rank-examples).
+>
+>  **Important:** Do not run the algorithm in `merge` mode.
+>
+>  **Note:** Isolated nodes have been removed for this task (reflecting the results of task 0).
 
-**IMPORTANT:** Do not run the algorithm in `merge` mode.
-
-**Deliverables:** all cypher queries (projection, stats mode, stream mode), and resulting
-visualisation image.
-
-**Neo4j database connection details:**
-
-- url: http://csc8101-neo4j-task1.uksouth.cloudapp.azure.com:7474/browser/
-- Neo4j Connect URL: bolt://20.90.189.157:7687
-- Neo4j username: neo4j
-- Neo4j password: neo4j
-
-Note: isolated nodes found in Task 0 have been removed for this task.
-
-## Task 2 - Centrality analysis
+### Task 2 - Centrality analysis
 
 Run the Page Rank algorithm for centrality analysis, available in the [GDS
 library](https://neo4j.com/docs/graph-data-science/current/algorithms/page-rank), with the following
@@ -161,24 +148,14 @@ As specificed above, run the algorithm in 2 modes: `stats` and `stream`:
 - Visualise the results in the [app](http://csc8101-neo4j-shiny.uksouth.cloudapp.azure.com/) by
   uploading the produced csv file (right-click to download image).
 
-**Tip:** See the
+> **Tip:** See the
 [examples](https://neo4j.com/docs/graph-data-science/1.8/algorithms/page-rank/#algorithms-page-rank-examples).
+>
+>  **Important:** Do not run the algorithm in `merge` mode.
+>
+>  **Note:** Isolated nodes have been removed for this task (reflecting the results of task 0).
 
-**IMPORTANT:** Do not run the algorithm in `merge` mode.
-
-**Deliverables:** all cypher queries (projection, stats mode, stream mode), and resulting
-visualisation image.
-
-**Neo4j database connection details:**
-
-- url: http://csc8101-neo4j-task1.uksouth.cloudapp.azure.com:7474/browser/
-- Neo4j Connect URL: bolt://20.90.189.157:7687
-- Neo4j username: neo4j
-- Neo4j password: neo4j
-
-Note: isolated nodes found in Task 0 have been removed for this task.
-
-## Task 3 - Zone recommendation
+### Task 3 - Zone recommendation
 
 Find the top 3 highest centrality zones per each community:
 
@@ -193,16 +170,62 @@ csv file. Then, using the visualisation
 [app](http://csc8101-neo4j-shiny.uksouth.cloudapp.azure.com/), upload these (one at a time) to the
 'Task-3' file input and produce a separate and produce two separate images.
 
-**IMPORTANT:** Do not delete any nodes/relationships. Execute `MATCH` queries only.
+**Important:** Do not delete any nodes/relationships. Execute `MATCH` queries only.
 
-**Deliverables:** cypher queries and resulting visualisation images.
+**Note:** Zone nodes now have two new properties - 'centrality' and 'community' (reflecting the result of tasks 1 and 2).
 
-**Neo4j database connection details:**
+
+## Deliverables
+
+You will submit the following deliverables to [NESS](https://ness.ncl.ac.uk):
+
+1. Cypher queries for all tasks (0 to 3) in a single ".cypher" file, with comments clearly indicating where one task begins and another ends.
+  - [ ] Task 0:
+    - [ ] query 1
+    - [ ] query 2
+  - [ ] Task 1: cypher queries for
+    - [ ] creating the graph projection
+    - [ ] running the Louvain algorithm in 'stats' mode
+    - [ ] running the Louvain algorithm in 'stream' mode
+  - Task 2: cypher queries for
+    - [ ] creating the graph projection
+    - [ ] running the Page Rank algorithm in 'stats' mode
+    - [ ] running the Page Rank algorithm in 'stream' mode
+  - Task 3:
+    - [ ] query including Manhattan
+    - [ ] query excluding Manhattan
+2.  Visualisation images for tasks 1, 2 and 3. A total of 4 images are expected:
+  1. Task 1: zone community ids
+  2. Task 2: zone centrality scores
+  3. Task 3a: top 3 highest centrality score zones per each community, _including_ Manhattan
+  4. Task 3b: top 3 highest centrality score zones per each community, _excluding_ Manhattan
+
+## Connection details
+
+Neo4j connection details for each task.
+
+### Task 0
+
+- url: http://csc8101-neo4j-task0.uksouth.cloudapp.azure.com:7474/browser/
+- Neo4j Connect URL: bolt://20.90.189.157:7687
+
+### Tasks 1 and 2
+
+- url: http://csc8101-neo4j-task1.uksouth.cloudapp.azure.com:7474/browser/
+- Neo4j Connect URL: bolt://20.90.189.157:7687
+
+### Task 3
 
 - url: http://csc8101-neo4j-task3.uksouth.cloudapp.azure.com:7474/browser/
 - Neo4j Connect URL: bolt://20.117.94.144:7687
-- Neo4j username: neo4j
-- Neo4j password: neo4j
 
-Note: Task 1 and 2 have been run in merge mode such that the relationship properties 'centrality'
-and 'community' are available for this task.
+### Username and Password
+
+The Neo4j database username and password are the same in all instances:
+
+- username: neo4j
+- passowrd: neo4j
+
+### Visualisation App
+
+- url: http://csc8101-neo4j-shiny.uksouth.cloudapp.azure.com/
