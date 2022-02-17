@@ -180,10 +180,10 @@ csv file. Then, using the visualisation
 You will submit the following deliverables to [NESS](https://ness.ncl.ac.uk):
 
 1. Cypher queries for all tasks (0 to 3) in a single ".cypher" file, with comments clearly indicating where each task begins.
-    - [ ] Task 0:
+    - Task 0:
         - [ ] query 1
         - [ ] query 2
-    - [ ] Task 1: cypher queries for
+    - Task 1: cypher queries for
         - [ ] creating the graph projection
         - [ ] running the Louvain algorithm in 'stats' mode
         - [ ] running the Louvain algorithm in 'stream' mode
@@ -195,10 +195,10 @@ You will submit the following deliverables to [NESS](https://ness.ncl.ac.uk):
         - [ ] query including Manhattan
         - [ ] query excluding Manhattan
 2.  Visualisation images for tasks 1, 2 and 3. A total of 4 images are expected:
-    1. Task 1: zone community ids
-    2. Task 2: zone centrality scores
-    3. Task 3a: top 3 highest centrality score zones per each community, _including_ Manhattan
-    4. Task 3b: top 3 highest centrality score zones per each community, _excluding_ Manhattan
+    - [ ] Task 1: zone community ids
+    - [ ] Task 2: zone centrality scores
+    - [ ] Task 3a: top 3 highest centrality score zones per each community, _including_ Manhattan
+    - [ ] Task 3b: top 3 highest centrality score zones per each community, _excluding_ Manhattan
 
 ## Connection details
 
