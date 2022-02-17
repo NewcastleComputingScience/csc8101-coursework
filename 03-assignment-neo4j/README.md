@@ -122,7 +122,7 @@ As specificed above, run the algorithm in 2 modes: `stats` and `stream`:
   uploading the produced csv file (right-click to download image).
 
 > **Tip:** See the
-[examples](https://neo4j.com/docs/graph-data-science/1.8/algorithms/page-rank/#algorithms-page-rank-examples).
+[examples page](https://neo4j.com/docs/graph-data-science/1.8/algorithms/page-rank/#algorithms-page-rank-examples).
 >
 >  **Important:** Do not run the algorithm in `merge` mode.
 >
@@ -149,7 +149,7 @@ As specificed above, run the algorithm in 2 modes: `stats` and `stream`:
   uploading the produced csv file (right-click to download image).
 
 > **Tip:** See the
-[examples](https://neo4j.com/docs/graph-data-science/1.8/algorithms/page-rank/#algorithms-page-rank-examples).
+[examples page](https://neo4j.com/docs/graph-data-science/1.8/algorithms/page-rank/#algorithms-page-rank-examples).
 >
 >  **Important:** Do not run the algorithm in `merge` mode.
 >
@@ -170,9 +170,9 @@ csv file. Then, using the visualisation
 [app](http://csc8101-neo4j-shiny.uksouth.cloudapp.azure.com/), upload these (one at a time) to the
 'Task-3' file input and produce a separate and produce two separate images.
 
-**Important:** Do not delete any nodes/relationships. Execute `MATCH` queries only.
-
-**Note:** Zone nodes now have two new properties - 'centrality' and 'community' (reflecting the result of tasks 1 and 2).
+> **Important:** Do not delete any nodes/relationships. Execute `MATCH` queries only.
+>
+> **Note:** Zone nodes now have two new properties - 'centrality' and 'community' (reflecting the result of tasks 1 and 2).
 
 
 ## Deliverables
