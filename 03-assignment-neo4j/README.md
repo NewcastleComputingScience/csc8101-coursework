@@ -4,7 +4,6 @@ Contents:
 
 - [Scenario](#scenario)
 - [Task details](#task-details)
-- [Deliverables](#deliverables)
 - [Connection details](#connection-details)
 
 ## Scenario
@@ -80,11 +79,6 @@ typical workflow described [here](https://neo4j.com/docs/graph-data-science/curr
 - Run the algorithm in [stream
   mode](https://neo4j.com/docs/graph-data-science/current/common-usage/running-algos/#running-algos-stream)
   to run the algorithm but not store the results in the original graph.
-
-> **Important:** Since everyone is reading from the same database, you will NOT execute write
-queries to the database (create/update/delete) **NOR** run the GDS library algorithms in [merge
-mode](https://neo4j.com/docs/graph-data-science/current/common-usage/running-algos/#running-algos-write)
-(as this would cause the results to be written to the original graph, shared by everyone).
 
 In task 3 you will develop a cypher query that combines the outcomes of tasks 1 and 2.
 
@@ -174,32 +168,6 @@ csv file. Then, using the visualisation
 >
 > **Note:** Zone nodes now have two new properties - 'centrality' and 'community' (reflecting the result of tasks 1 and 2).
 
-
-## Deliverables
-
-You will submit the following deliverables to [NESS](https://ness.ncl.ac.uk):
-
-1. Cypher queries for all tasks (0 to 3) in a single ".cypher" file, with comments clearly indicating where each task begins.
-    - Task 0:
-        - [ ] query 1
-        - [ ] query 2
-    - Task 1: cypher queries for
-        - [ ] creating the graph projection
-        - [ ] running the Louvain algorithm in 'stats' mode
-        - [ ] running the Louvain algorithm in 'stream' mode
-    - Task 2: cypher queries for
-        - [ ] creating the graph projection
-        -  [ ] running the Page Rank algorithm in 'stats' mode
-        - [ ] running the Page Rank algorithm in 'stream' mode
-    - Task 3:
-        - [ ] query including Manhattan
-        - [ ] query excluding Manhattan
-2.  Visualisation images for tasks 1, 2 and 3. A total of 4 images are expected:
-    - [ ] Task 1: zone community ids
-    - [ ] Task 2: zone centrality scores
-    - [ ] Task 3a: top 3 highest centrality score zones per each community, _including_ Manhattan
-    - [ ] Task 3b: top 3 highest centrality score zones per each community, _excluding_ Manhattan
-
 ## Connection details
 
 Neo4j connection details for each task.
@@ -207,7 +175,7 @@ Neo4j connection details for each task.
 ### Task 0
 
 - url: http://csc8101-neo4j-task0.uksouth.cloudapp.azure.com:7474/browser/
-- Neo4j Connect URL: bolt://20.90.189.157:7687
+- Neo4j Connect URL: bolt://20.90.107.47:7687
 
 ### Tasks 1 and 2
 
