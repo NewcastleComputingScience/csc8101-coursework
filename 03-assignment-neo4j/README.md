@@ -175,17 +175,17 @@ Neo4j connection details for each task.
 ### Task 0
 
 - url: http://csc8101-neo4j-task0.uksouth.cloudapp.azure.com:7474/browser/
-- Neo4j Connect URL: bolt://20.90.107.47:7687
+- Neo4j Connect URL: neo4j://csc8101-neo4j-task0.uksouth.cloudapp.azure.com:7687
 
 ### Tasks 1 and 2
 
 - url: http://csc8101-neo4j-task1.uksouth.cloudapp.azure.com:7474/browser/
-- Neo4j Connect URL: bolt://20.90.189.157:7687
+- Neo4j Connect URL: neo4j://csc8101-neo4j-task1.uksouth.cloudapp.azure.com:7687
 
 ### Task 3
 
 - url: http://csc8101-neo4j-task3.uksouth.cloudapp.azure.com:7474/browser/
-- Neo4j Connect URL: bolt://20.117.94.144:7687
+- Neo4j Connect URL: neo4j://csc8101-neo4j-task3.uksouth.cloudapp.azure.com:7687
 
 ### Username and Password
 
