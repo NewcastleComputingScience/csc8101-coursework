@@ -10,7 +10,7 @@ Contents:
 
 A taxi company operating in New York City (NYC) is rethinking its fleet allocation strategy. Their
 restructuring process is motivated by recent changes in passenger travel patterns (provoked by
-Covid) and the arrival of new competitorsn. To minimise costs, the company wants to station its
+Covid) and the arrival of new competitors. To minimise costs, the company wants to station its
 fleet in a maximum of 20 city zones, spread across the city. At the same time, the company wants to
 maximise trips served and therefore choose zones that have hub-like characteristics, i.e. that are
 well-connected and near centres of high user activity. Lastly, the company considers operating
@@ -91,7 +91,7 @@ Find all:
 
 1. Self-pointing relationships, that is, all relationship instances of type `:CONNECTS` where the
    start node is the same as the end node.
-2. Find all isolated nodes, i.e. all nodes that have no relationship instaces of type `:CONNECTS`
+2. Find all isolated nodes, i.e. all nodes that have no relationship instances of type `:CONNECTS`
    to other nodes except possibly to themselves.
 
 > **Important:** Do not delete the nodes/relationships found this way. Execute `MATCH` only queries.
@@ -107,7 +107,7 @@ arguments:
   is necessary to avoid naming conflicts between students).
 - Weighted by the `trips` property in `:CONNECTS` type of relationships.
 
-As specificed above, run the algorithm in 2 modes: `stats` and `stream`:
+As specified above, run the algorithm in 2 modes: `stats` and `stream`:
 
 - Report the number of communities using the `stats` mode,
 - Export the results of running the algorithm in `stream` as a CSV file with two columns `zone_id`
@@ -192,7 +192,7 @@ Neo4j connection details for each task.
 The Neo4j database username and password are the same in all instances:
 
 - username: neo4j
-- passowrd: neo4j
+- password: neo4j
 
 ### Visualisation App
 
