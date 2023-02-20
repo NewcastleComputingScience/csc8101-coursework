@@ -110,8 +110,8 @@ arguments:
 As specified above, run the algorithm in 2 modes: `stats` and `stream`:
 
 - Report the number of communities using the `stats` mode,
-- In stream mode, return the `community` and `id` properties of each zone (in this order),
-- Export the results of running the algorithm in `stream` as a CSV file with two columns named `community_id`, `zone_id` and
+- In stream mode, return the `id` and `community` properties of each zone (in this order),
+- Export the results of running the algorithm in `stream` as a CSV file with two columns named `zone_id`, `community_id` and
 - Visualise the results in the [app](http://csc8101-neo4j-shiny.uksouth.cloudapp.azure.com/) by
   uploading the produced csv file (right-click to download image).
 
