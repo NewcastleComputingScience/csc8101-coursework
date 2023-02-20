@@ -103,15 +103,15 @@ library](https://neo4j.com/docs/graph-data-science/current/algorithms/louvain/),
 arguments:
 
 - Graph projection of type `UNDIRECTED`.
-- Name the graph projection as `USERNAME-communities` where USERNAME is your username (this
+- Name the graph projection as `USERNAME-communities` where USERNAME is your student number (this
   is necessary to avoid naming conflicts between students).
 - Weighted by the `trips` property in `:CONNECTS` type of relationships.
 
 As specified above, run the algorithm in 2 modes: `stats` and `stream`:
 
 - Report the number of communities using the `stats` mode,
-- Export the results of running the algorithm in `stream` as a CSV file with two columns `zone_id`
-  and `community_id` and
+- In stream mode, return the `community` and `id` properties of each zone (in this order),
+- Export the results of running the algorithm in `stream` as a CSV file with two columns named `community_id`, `zone_id` and
 - Visualise the results in the [app](http://csc8101-neo4j-shiny.uksouth.cloudapp.azure.com/) by
   uploading the produced csv file (right-click to download image).
 
@@ -137,8 +137,8 @@ arguments:
 As specificed above, run the algorithm in 2 modes: `stats` and `stream`:
 
 - Report the maximum and minimum centrality score using the `stats` mode,
-- Export the results of running the algorithm in `stream` as a CSV file with two columns `zone_id`
-  and `centrality_score` and
+- In stream mode, return the `id`, `centrality` properties of each zone (in this order),
+- Export the results of running the algorithm in `stream` as a CSV file with two columns named `zone_id` and `centrality_score` and
 - Visualise the results in the [app](http://csc8101-neo4j-shiny.uksouth.cloudapp.azure.com/) by
   uploading the produced csv file (right-click to download image).
 
@@ -156,7 +156,7 @@ Find the top 3 highest centrality zones per each community:
 1. Including zones in the 'Manhattan' borough. 
 2. Excluding zones in the 'Manhattan' borough.
 
-Do this using the available zone labels `community` (representing the community
+Do this using the available `zone` properties `community` (representing the community
 id obtained in 1) and `centrality` (representing the centrality score obtained in 2).
 
 For each case, return two columns: `zone_id` and `community_id` and export the query results to a
