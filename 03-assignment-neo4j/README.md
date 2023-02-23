@@ -129,7 +129,7 @@ library](https://neo4j.com/docs/graph-data-science/current/algorithms/page-rank)
 arguments:
 
 - Directed graph projection
-- Name the graph projection as `USERNAME-centrality` where USERNAME is your username (this
+- Name the graph projection as `USERNAME-centrality` where USERNAME is your student number (this
   is necessary to avoid naming conflicts between students).
 - Damping factor: 0.75
 - Weighted by the `trips` property in `:CONNECTS` type of relationships.
